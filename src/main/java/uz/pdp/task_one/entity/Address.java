@@ -19,6 +19,6 @@ public class Address {
     private String street;
 
     @Column(nullable = false)
-    private Long homeNumber;
+    private Integer homeNumber;
 
 }

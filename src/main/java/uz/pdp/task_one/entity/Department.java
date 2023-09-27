@@ -10,12 +10,15 @@ import lombok.*;
 @Builder
 @ToString
 @Entity
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"name","company_id"})})
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, unique = true)
+
+    @Column(nullable = false)
     private String name;
+
     @ManyToOne
     private Company company;
 }
